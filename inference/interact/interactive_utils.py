@@ -23,6 +23,12 @@ def index_numpy_to_one_hot_torch(mask, num_classes):
     mask = torch.from_numpy(mask).long()
     return F.one_hot(mask, num_classes=num_classes).permute(2, 0, 1).float()
 
+# def index_numpy_to_one_hot_torch(mask, num_classes):
+#     mask = np.clip(mask, 0, num_classes - 1)  # 將類值限制在合理的範圍內
+#     mask = torch.from_numpy(mask).long()
+#     return F.one_hot(mask, num_classes=num_classes).permute(2, 0, 1).float()
+
+
 """
 Some constants fro visualization
 """
